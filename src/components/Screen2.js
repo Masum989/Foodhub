@@ -1,19 +1,49 @@
 import React,{useState} from 'react';
 import {Link} from 'react-router-dom';
 
-
 function Screen2() {
-  const[state,setState] = useState(0);
-
-   const add=()=>{
-      setState(state+1);
+  const[state1,setState1] = useState(0);
+  const[state2,setState2] = useState(0);
+  const[state3,setState3] = useState(0);
+  const[state4,setState4] = useState(0);
+  
+   const add1=()=>{
+      setState1(state1+1);
    }
-   const remove=()=>{
-    if(state>=1)
-    setState(state-1);
+   const remove1=()=>{
+    if(state1>=1)
+    setState1(state1-1);
     else
-    setState(state);
+    setState1(state1);
    }
+   const add2=()=>{
+    setState2(state2+1);
+ }
+ const remove2=()=>{
+  if(state2>=1)
+  setState2(state2-1);
+  else
+  setState2(state2);
+ }
+ const add3=()=>{
+    setState3(state3+1);
+ }
+ const remove3=()=>{
+  if(state3>=1)
+  setState3(state3-1);
+  else
+  setState3(state3);
+ }
+ const add4=()=>{
+    setState4(state4+1);
+ }
+ const remove4=()=>{
+  if(state4>=1)
+  setState4(state4-1);
+  else
+  setState4(state4);
+ }
+ const state = state1+state2+state3+state4;
 
   return (
     <>
@@ -48,30 +78,50 @@ function Screen2() {
             <img src='https://bitbucket.org/punitdiwan/coding-challange/raw/422d739e95063be2ad555486c6d207c92a9977ff/assets/burger.jpeg' width="250px" height="150px" alt='burger'/>
             <h3>Humburger</h3>
             <h6>Price:200</h6>
-            <button onClick={add} className="increment">+</button>
-            <button onClick={remove} className="decrement">-</button>
+            {state1>0?(
+                <div>
+                <h6>Total: {state1}</h6>
+                <h6>Cost(INR): {state1*200}</h6></div>
+            ):""}
+            <button onClick={add1} className="increment">+</button>
+            <button onClick={remove1} className="decrement">-</button>
         </div>
         <div className='col-md-4' style={{boxShadow:"2px whitesmoke"}}>
         <img src="https://bitbucket.org/punitdiwan/coding-challange/raw/422d739e95063be2ad555486c6d207c92a9977ff/assets/coke.jpeg" width="250px" height="150px" alt='burger'/>
              <h3>Coke</h3>
             <h6>Price:100</h6>
-            <button onClick={add}  className="increment">+</button>
-            <button onClick={remove} className="decrement" >-</button>
+            {state2>0?(
+                <div>
+                <h6>Total: {state2}</h6>
+                <h6>Cost(INR): {state2*100}</h6></div>
+            ):""}
+            <button onClick={add2}  className="increment">+</button>
+            <button onClick={remove2} className="decrement" >-</button>
         </div>
         <div className='col-md-4'>
         <img src='https://bitbucket.org/punitdiwan/coding-challange/raw/422d739e95063be2ad555486c6d207c92a9977ff/assets/fries.jpeg' width="250px" height="150px" alt='burger'/>
             <h3>Fries</h3>
             <h6>Price:50</h6>
-            <button onClick={add} className="increment">+</button>
-            <button onClick={remove} className="decrement">-</button>
+            {state3>0?(
+                <div>
+                <h6>Total: {state3}</h6>
+                <h6>Cost(INR): {state3*50}</h6></div>
+            ):""}
+            <button onClick={add3} className="increment">+</button>
+            <button onClick={remove3} className="decrement">-</button>
             
         </div>
         <div className='col-md-4 my-5'>
              <img src='https://bitbucket.org/punitdiwan/coding-challange/raw/422d739e95063be2ad555486c6d207c92a9977ff/assets/pepsi.jpeg' width="250px" height="150px" alt='burger'/>
             <h3>Pepsi</h3>
             <h6>Price:50</h6>
-            <button onClick={add} className="increment">+</button>
-            <button onClick={remove} className="decrement">-</button>
+            {state4>0?(
+                <div>
+                <h6>Total: {state4}</h6>
+                <h6>Cost(INR): {state4*50}</h6></div>
+            ):""}
+            <button onClick={add4} className="increment">+</button>
+            <button onClick={remove4} className="decrement">-</button>
         </div>
     </div>
     </>
